@@ -1,0 +1,240 @@
+<section class="bmi-page">
+
+  <div class="page-heading">
+    <span>BMI CALCULATOR</span>
+    <h1>Know Your Body Mass Index</h1>
+    <p>
+      Enter your information below to calculate your BMI
+      and understand your current weight category.
+    </p>
+  </div>
+
+  <div class="calculator-container">
+
+    <div class="calculator-card">
+
+      <h2>Enter Your Details</h2>
+
+      <div class="form-group">
+        <label>Full Name</label>
+
+        <input
+          type="text"
+          [(ngModel)]="name"
+          placeholder="Enter your name">
+      </div>
+
+
+      <div class="form-row">
+
+        <div class="form-group">
+          <label>Age</label>
+
+          <input
+            type="number"
+            [(ngModel)]="age"
+            placeholder="Age">
+        </div>
+
+
+        <div class="form-group">
+          <label>Gender</label>
+
+          <select [(ngModel)]="gender">
+
+            <option value="">
+              Select Gender
+            </option>
+
+            <option value="Male">
+              Male
+            </option>
+
+            <option value="Female">
+              Female
+            </option>
+
+            <option value="Other">
+              Other
+            </option>
+
+          </select>
+        </div>
+
+      </div>
+
+
+      <div class="form-row">
+
+        <div class="form-group">
+
+          <label>
+            Height (cm)
+          </label>
+
+          <input
+            type="number"
+            [(ngModel)]="height"
+            placeholder="Example: 175">
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Weight (kg)
+          </label>
+
+          <input
+            type="number"
+            [(ngModel)]="weight"
+            placeholder="Example: 70">
+
+        </div>
+
+      </div>
+
+
+      <div class="buttons">
+
+        <button
+          class="calculate-btn"
+          (click)="calculateBMI()">
+
+          {{ loading ? 'Calculating...' : 'Calculate BMI' }}
+
+        </button>
+
+        <button
+          class="reset-btn"
+          (click)="resetCalculator()">
+
+          Reset
+
+        </button>
+
+      </div>
+
+
+      <p
+        class="error"
+        *ngIf="errorMessage">
+
+        {{ errorMessage }}
+
+      </p>
+
+    </div>
+
+
+    <div class="result-card">
+
+      <div *ngIf="!result" class="empty-result">
+
+        <div class="result-icon">
+          ⚖️
+        </div>
+
+        <h2>Your BMI Result</h2>
+
+        <p>
+          Enter your details and click Calculate BMI
+          to view your result.
+        </p>
+
+      </div>
+
+
+      <div *ngIf="result" class="result">
+
+        <p class="hello">
+          Hello {{ result.name }}!
+        </p>
+
+        <span>Your BMI is</span>
+
+        <div class="bmi-number">
+          {{ result.bmi }}
+        </div>
+
+        <div
+          class="category"
+          [ngClass]="{
+            'underweight': result.category === 'Underweight',
+            'normal': result.category === 'Normal',
+            'overweight': result.category === 'Overweight',
+            'obese': result.category === 'Obese'
+          }">
+
+          {{ result.category }}
+
+        </div>
+
+        <div class="result-details">
+
+          <div>
+            <span>Height</span>
+            <strong>
+              {{ result.height }} cm
+            </strong>
+          </div>
+
+          <div>
+            <span>Weight</span>
+            <strong>
+              {{ result.weight }} kg
+            </strong>
+          </div>
+
+          <div>
+            <span>Age</span>
+            <strong>
+              {{ result.age }}
+            </strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="bmi-guide">
+
+    <h2>BMI Categories</h2>
+
+    <div class="guide-grid">
+
+      <div>
+        <span class="dot under-dot"></span>
+        <strong>Underweight</strong>
+        <p>Below 18.5</p>
+      </div>
+
+      <div>
+        <span class="dot normal-dot"></span>
+        <strong>Normal</strong>
+        <p>18.5 – 24.9</p>
+      </div>
+
+      <div>
+        <span class="dot over-dot"></span>
+        <strong>Overweight</strong>
+        <p>25 – 29.9</p>
+      </div>
+
+      <div>
+        <span class="dot obese-dot"></span>
+        <strong>Obese</strong>
+        <p>30 and above</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

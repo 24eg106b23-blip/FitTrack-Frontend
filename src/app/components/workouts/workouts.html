@@ -1,0 +1,151 @@
+<section class="workouts-page">
+
+  <div class="page-heading">
+    <span>WORKOUT PLANS</span>
+    <h1>Train Smarter. Get Stronger.</h1>
+    <p>
+      Choose a workout plan based on your fitness level
+      and personal goal.
+    </p>
+  </div>
+
+  <div class="plans-grid">
+
+    <div
+      class="plan-card"
+      *ngFor="let plan of workoutPlans">
+
+      <div class="plan-top">
+        <div class="plan-icon">
+          {{ plan.icon }}
+        </div>
+
+        <span class="level">
+          {{ plan.level }}
+        </span>
+      </div>
+
+      <h2>{{ plan.title }}</h2>
+
+      <p class="description">
+        {{ plan.description }}
+      </p>
+
+      <div class="plan-details">
+
+        <div>
+          <span>⏱ Duration</span>
+          <strong>{{ plan.duration }}</strong>
+        </div>
+
+        <div>
+          <span>📅 Schedule</span>
+          <strong>{{ plan.days }}</strong>
+        </div>
+
+      </div>
+
+      <button (click)="viewPlan(plan)">
+        View Workout →
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div
+    class="selected-workout"
+    *ngIf="selectedPlan">
+
+    <div class="workout-box">
+
+      <button
+        class="close"
+        (click)="closePlan()">
+        ×
+      </button>
+
+      <div class="large-icon">
+        {{ selectedPlan.icon }}
+      </div>
+
+      <span class="workout-label">
+        SELECTED WORKOUT
+      </span>
+
+      <h2>
+        {{ selectedPlan.title }}
+      </h2>
+
+      <p>
+        {{ selectedPlan.description }}
+      </p>
+
+      <div class="workout-info">
+
+        <div>
+          <span>Level</span>
+          <strong>
+            {{ selectedPlan.level }}
+          </strong>
+        </div>
+
+        <div>
+          <span>Duration</span>
+          <strong>
+            {{ selectedPlan.duration }}
+          </strong>
+        </div>
+
+        <div>
+          <span>Schedule</span>
+          <strong>
+            {{ selectedPlan.days }}
+          </strong>
+        </div>
+
+      </div>
+
+      <h3>Today's Exercises</h3>
+
+      <div class="exercise-list">
+
+        <div
+          class="exercise"
+          *ngFor="let exercise of selectedPlan.exercises; let i = index">
+
+          <span>{{ i + 1 }}</span>
+
+          <p>{{ exercise }}</p>
+
+          <strong>✓</strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="workout-tip">
+
+    <div class="tip-icon">💡</div>
+
+    <div>
+      <span>FITTRACK TIP</span>
+
+      <h2>Consistency beats intensity.</h2>
+
+      <p>
+        Start with a workout that matches your current
+        fitness level. Increase the intensity gradually
+        as your strength and stamina improve.
+      </p>
+    </div>
+
+  </div>
+
+</section>

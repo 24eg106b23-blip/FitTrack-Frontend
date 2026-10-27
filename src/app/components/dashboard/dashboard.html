@@ -1,0 +1,235 @@
+<section class="dashboard-page">
+
+  <div class="dashboard-header">
+    <div>
+      <span class="small-title">FITNESS DASHBOARD</span>
+
+      <h1>Welcome back, {{ userName }} 👋</h1>
+
+      <p>
+        Here's an overview of your current fitness status
+        and daily health goals.
+      </p>
+    </div>
+
+    <div class="status">
+      ● Active
+    </div>
+  </div>
+
+
+  <div class="stats-grid">
+
+    <div class="stat-card">
+      <div class="stat-icon">⚖️</div>
+
+      <div>
+        <span>Current BMI</span>
+
+        <h2>{{ currentBMI }}</h2>
+
+        <p class="normal">
+          {{ bmiCategory }}
+        </p>
+      </div>
+    </div>
+
+
+    <div class="stat-card">
+      <div class="stat-icon">🏃</div>
+
+      <div>
+        <span>Current Weight</span>
+
+        <h2>
+          {{ currentWeight }}
+          <small>kg</small>
+        </h2>
+
+        <p>Keep progressing</p>
+      </div>
+    </div>
+
+
+    <div class="stat-card">
+      <div class="stat-icon">🎯</div>
+
+      <div>
+        <span>Target Weight</span>
+
+        <h2>
+          {{ targetWeight }}
+          <small>kg</small>
+        </h2>
+
+        <p>
+          {{ currentWeight - targetWeight }} kg remaining
+        </p>
+      </div>
+    </div>
+
+
+    <div class="stat-card">
+      <div class="stat-icon">💧</div>
+
+      <div>
+        <span>Daily Water Goal</span>
+
+        <h2>
+          {{ waterGoal }}
+          <small>L</small>
+        </h2>
+
+        <p>Stay hydrated</p>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="dashboard-grid">
+
+    <div class="progress-card">
+
+      <div class="card-heading">
+        <div>
+          <span>YOUR PROGRESS</span>
+          <h2>Fitness Goal</h2>
+        </div>
+
+        <strong>{{ progress }}%</strong>
+      </div>
+
+      <div class="progress-bar">
+        <div
+          class="progress-fill"
+          [style.width.%]="progress">
+        </div>
+      </div>
+
+      <div class="progress-info">
+
+        <div>
+          <span>Starting Weight</span>
+          <strong>75 kg</strong>
+        </div>
+
+        <div>
+          <span>Current Weight</span>
+          <strong>{{ currentWeight }} kg</strong>
+        </div>
+
+        <div>
+          <span>Target Weight</span>
+          <strong>{{ targetWeight }} kg</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="daily-goals">
+
+      <span class="section-label">
+        DAILY TARGETS
+      </span>
+
+      <h2>Today's Goals</h2>
+
+
+      <div class="goal">
+
+        <div class="goal-icon">🔥</div>
+
+        <div>
+          <span>Calories</span>
+
+          <strong>
+            {{ calorieGoal }} kcal
+          </strong>
+        </div>
+
+      </div>
+
+
+      <div class="goal">
+
+        <div class="goal-icon">💧</div>
+
+        <div>
+          <span>Water</span>
+
+          <strong>
+            {{ waterGoal }} Litres
+          </strong>
+        </div>
+
+      </div>
+
+
+      <div class="goal">
+
+        <div class="goal-icon">🏋️</div>
+
+        <div>
+          <span>Workout</span>
+
+          <strong>
+            45 Minutes
+          </strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="bottom-grid">
+
+    <div class="workout-card">
+
+      <span>WEEKLY ACTIVITY</span>
+
+      <h2>Workout Goal</h2>
+
+      <div class="workout-number">
+        {{ weeklyWorkouts }}
+        <small>/ 5 days</small>
+      </div>
+
+      <div class="mini-progress">
+        <div style="width: 80%"></div>
+      </div>
+
+      <p>
+        Great work! You're close to completing
+        your weekly workout goal.
+      </p>
+
+    </div>
+
+
+    <div class="motivation-card">
+
+      <span>DAILY MOTIVATION</span>
+
+      <h2>Keep Moving Forward 💪</h2>
+
+      <p>
+        Small progress every day adds up to big
+        results. Stay consistent and keep working
+        toward your fitness goals.
+      </p>
+
+      <a href="/workouts">
+        View Workout Plans →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>

@@ -1,0 +1,180 @@
+<section class="profile-page">
+
+  <div class="page-heading">
+    <span>MY PROFILE</span>
+    <h1>Your Fitness Profile</h1>
+    <p>
+      View your personal health information and customize your fitness goals.
+    </p>
+  </div>
+
+  <div class="profile-container">
+
+    <div class="profile-card">
+
+      <div class="avatar">
+        {{ name ? name.charAt(0).toUpperCase() : 'U' }}
+      </div>
+
+      <h2>{{ name || 'FitTrack User' }}</h2>
+
+      <p>{{ fitnessGoal }}</p>
+
+      <div class="bmi-badge" *ngIf="bmi">
+        BMI {{ bmi }} • {{ category }}
+      </div>
+
+    </div>
+
+
+    <div class="details-card">
+
+      <div class="card-header">
+
+        <div>
+          <span>PERSONAL INFORMATION</span>
+          <h2>Health Details</h2>
+        </div>
+
+        <button
+          *ngIf="!editMode"
+          (click)="enableEdit()">
+          Edit Profile
+        </button>
+
+      </div>
+
+
+      <div class="details-grid">
+
+        <div class="detail">
+          <span>Full Name</span>
+          <strong>{{ name || 'Not available' }}</strong>
+        </div>
+
+        <div class="detail">
+          <span>Age</span>
+          <strong>{{ age || 'Not available' }}</strong>
+        </div>
+
+        <div class="detail">
+          <span>Gender</span>
+          <strong>{{ gender || 'Not available' }}</strong>
+        </div>
+
+        <div class="detail">
+          <span>Height</span>
+          <strong>
+            {{ height ? height + ' cm' : 'Not available' }}
+          </strong>
+        </div>
+
+        <div class="detail">
+          <span>Current Weight</span>
+          <strong>
+            {{ weight ? weight + ' kg' : 'Not available' }}
+          </strong>
+        </div>
+
+        <div class="detail">
+          <span>Current BMI</span>
+          <strong>{{ bmi || 'Not calculated' }}</strong>
+        </div>
+
+      </div>
+
+
+      <div class="goal-section">
+
+        <span class="section-label">FITNESS SETTINGS</span>
+
+        <h2>Your Goals</h2>
+
+        <div class="goal-grid">
+
+          <div>
+            <label>Target Weight</label>
+
+            <div *ngIf="!editMode" class="goal-value">
+              {{ targetWeight }} kg
+            </div>
+
+            <input
+              *ngIf="editMode"
+              type="number"
+              [(ngModel)]="targetWeight">
+          </div>
+
+
+          <div>
+            <label>Fitness Goal</label>
+
+            <div *ngIf="!editMode" class="goal-value">
+              {{ fitnessGoal }}
+            </div>
+
+            <select
+              *ngIf="editMode"
+              [(ngModel)]="fitnessGoal">
+
+              <option>General Fitness</option>
+              <option>Weight Loss</option>
+              <option>Muscle Gain</option>
+              <option>Improve Stamina</option>
+
+            </select>
+          </div>
+
+        </div>
+
+
+        <button
+          class="save-btn"
+          *ngIf="editMode"
+          (click)="saveProfile()">
+          Save Changes
+        </button>
+
+
+        <p
+          class="success-message"
+          *ngIf="message">
+          ✓ {{ message }}
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="profile-stats">
+
+    <div>
+      <div class="stat-icon">⚖️</div>
+      <span>Weight</span>
+      <strong>{{ weight || 0 }} kg</strong>
+    </div>
+
+    <div>
+      <div class="stat-icon">📊</div>
+      <span>BMI</span>
+      <strong>{{ bmi || 0 }}</strong>
+    </div>
+
+    <div>
+      <div class="stat-icon">🎯</div>
+      <span>Target</span>
+      <strong>{{ targetWeight }} kg</strong>
+    </div>
+
+    <div>
+      <div class="stat-icon">🏆</div>
+      <span>Goal</span>
+      <strong>{{ fitnessGoal }}</strong>
+    </div>
+
+  </div>
+
+</section>

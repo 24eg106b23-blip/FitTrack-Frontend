@@ -1,0 +1,300 @@
+.dashboard-page {
+  min-height: 100vh;
+  padding: 55px 7%;
+  background: #f5f7fb;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.small-title,
+.section-label,
+.progress-card .card-heading span,
+.workout-card > span,
+.motivation-card > span {
+  color: #16a34a;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.dashboard-header h1 {
+  color: #0f172a;
+  font-size: 36px;
+  margin: 8px 0;
+}
+
+.dashboard-header p {
+  color: #64748b;
+}
+
+.status {
+  background: #dcfce7;
+  color: #15803d;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.stat-card {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.04);
+}
+
+.stat-icon {
+  min-width: 52px;
+  height: 52px;
+  background: #dcfce7;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.stat-card span {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.stat-card h2 {
+  color: #0f172a;
+  margin: 5px 0;
+  font-size: 28px;
+}
+
+.stat-card h2 small {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.stat-card p {
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.stat-card .normal {
+  color: #16a34a;
+  font-weight: bold;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.progress-card,
+.daily-goals,
+.workout-card,
+.motivation-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.04);
+}
+
+.card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-heading h2,
+.daily-goals h2,
+.workout-card h2,
+.motivation-card h2 {
+  color: #0f172a;
+  margin-top: 7px;
+}
+
+.card-heading > strong {
+  font-size: 30px;
+  color: #16a34a;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background: #e2e8f0;
+  border-radius: 20px;
+  margin: 30px 0;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #22c55e;
+  border-radius: 20px;
+}
+
+.progress-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.progress-info div {
+  text-align: center;
+  border-right: 1px solid #e2e8f0;
+}
+
+.progress-info div:last-child {
+  border-right: none;
+}
+
+.progress-info span {
+  display: block;
+  color: #94a3b8;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.progress-info strong {
+  color: #334155;
+}
+
+.daily-goals h2 {
+  margin-bottom: 20px;
+}
+
+.goal {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.goal:last-child {
+  border-bottom: none;
+}
+
+.goal-icon {
+  width: 45px;
+  height: 45px;
+  background: #f0fdf4;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 21px;
+}
+
+.goal span {
+  display: block;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.goal strong {
+  color: #334155;
+}
+
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.workout-number {
+  color: #16a34a;
+  font-size: 45px;
+  font-weight: bold;
+  margin: 20px 0 10px;
+}
+
+.workout-number small {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.mini-progress {
+  height: 9px;
+  background: #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.mini-progress div {
+  height: 100%;
+  background: #22c55e;
+}
+
+.workout-card p,
+.motivation-card p {
+  color: #64748b;
+  line-height: 1.7;
+  margin-top: 15px;
+}
+
+.motivation-card {
+  background: linear-gradient(135deg, #0f172a, #172554);
+}
+
+.motivation-card h2 {
+  color: white;
+}
+
+.motivation-card p {
+  color: #cbd5e1;
+}
+
+.motivation-card a {
+  display: inline-block;
+  margin-top: 20px;
+  color: #4ade80;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@media (max-width: 1000px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-grid,
+  .bottom-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .progress-info {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .progress-info div {
+    border-right: none;
+  }
+}

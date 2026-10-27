@@ -1,0 +1,255 @@
+<section class="progress-page">
+
+  <div class="page-heading">
+
+    <span>PROGRESS TRACKER</span>
+
+    <h1>Track Your Fitness Journey</h1>
+
+    <p>
+      Record your weight and BMI regularly to monitor
+      your progress over time.
+    </p>
+
+  </div>
+
+
+  <div class="tracker-grid">
+
+    <div class="add-card">
+
+      <span class="card-label">
+        NEW RECORD
+      </span>
+
+      <h2>Add Progress</h2>
+
+      <div class="form-group">
+
+        <label>Current Weight (kg)</label>
+
+        <input
+          type="number"
+          [(ngModel)]="weight"
+          placeholder="Example: 70">
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label>Current BMI</label>
+
+        <input
+          type="number"
+          [(ngModel)]="bmi"
+          placeholder="Example: 22.86">
+
+      </div>
+
+
+      <button (click)="addProgress()">
+        + Save Progress
+      </button>
+
+      <p class="hint">
+        Your latest BMI Calculator result is filled
+        automatically.
+      </p>
+
+    </div>
+
+
+    <div class="summary-card">
+
+      <span class="card-label">
+        CURRENT STATUS
+      </span>
+
+      <h2>Your Latest Measurements</h2>
+
+      <div class="summary-grid">
+
+        <div>
+          <div class="summary-icon">⚖️</div>
+
+          <span>Current Weight</span>
+
+          <strong>
+            {{ weight || 0 }} kg
+          </strong>
+        </div>
+
+
+        <div>
+          <div class="summary-icon">📊</div>
+
+          <span>Current BMI</span>
+
+          <strong>
+            {{ bmi || 0 }}
+          </strong>
+        </div>
+
+
+        <div>
+          <div class="summary-icon">📝</div>
+
+          <span>Records</span>
+
+          <strong>
+            {{ records.length }}
+          </strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="history-card">
+
+    <div class="history-heading">
+
+      <div>
+        <span class="card-label">
+          HISTORY
+        </span>
+
+        <h2>Progress Records</h2>
+      </div>
+
+      <button
+        class="clear-btn"
+        *ngIf="records.length > 0"
+        (click)="clearHistory()">
+
+        Clear History
+
+      </button>
+
+    </div>
+
+
+    <div
+      class="empty-history"
+      *ngIf="records.length === 0">
+
+      <div>📈</div>
+
+      <h3>No progress records yet</h3>
+
+      <p>
+        Add your first progress record above to
+        start tracking your fitness journey.
+      </p>
+
+    </div>
+
+
+    <div
+      class="table-container"
+      *ngIf="records.length > 0">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Date</th>
+            <th>Weight</th>
+            <th>BMI</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr
+            *ngFor="let record of records; let i = index">
+
+            <td>{{ i + 1 }}</td>
+
+            <td>
+              {{ record.date }}
+            </td>
+
+            <td>
+              <strong>
+                {{ record.weight }} kg
+              </strong>
+            </td>
+
+            <td>
+              {{ record.bmi }}
+            </td>
+
+            <td>
+
+              <span
+                class="bmi-status"
+                [ngClass]="{
+                  'under': record.bmi < 18.5,
+                  'normal': record.bmi >= 18.5 && record.bmi < 25,
+                  'over': record.bmi >= 25 && record.bmi < 30,
+                  'obese': record.bmi >= 30
+                }">
+
+                {{
+                  record.bmi < 18.5
+                  ? 'Underweight'
+                  : record.bmi < 25
+                  ? 'Normal'
+                  : record.bmi < 30
+                  ? 'Overweight'
+                  : 'Obese'
+                }}
+
+              </span>
+
+            </td>
+
+            <td>
+
+              <button
+                class="delete-btn"
+                (click)="deleteRecord(i)">
+
+                Delete
+
+              </button>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+
+  <div class="progress-message">
+
+    <div>🏆</div>
+
+    <div>
+      <span>FITTRACK PROGRESS</span>
+
+      <h2>Every record tells your story.</h2>
+
+      <p>
+        Track consistently and focus on long-term
+        improvement rather than daily changes.
+      </p>
+    </div>
+
+  </div>
+
+</section>

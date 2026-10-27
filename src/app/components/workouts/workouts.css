@@ -1,0 +1,281 @@
+.workouts-page {
+  min-height: 100vh;
+  padding: 65px 7%;
+  background: #f5f7fb;
+}
+
+.page-heading {
+  max-width: 700px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.page-heading span,
+.workout-label,
+.workout-tip span {
+  color: #16a34a;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.page-heading h1 {
+  color: #0f172a;
+  font-size: 40px;
+  margin: 10px 0;
+}
+
+.page-heading p {
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.plans-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.plan-card {
+  background: white;
+  padding: 28px;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
+  transition: 0.3s;
+}
+
+.plan-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.10);
+}
+
+.plan-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.plan-icon {
+  width: 58px;
+  height: 58px;
+  background: #dcfce7;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.level {
+  background: #f1f5f9;
+  color: #475569;
+  padding: 7px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.plan-card h2 {
+  color: #0f172a;
+  margin: 22px 0 10px;
+}
+
+.description {
+  color: #64748b;
+  line-height: 1.7;
+  font-size: 14px;
+  min-height: 95px;
+}
+
+.plan-details {
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 18px 0;
+  margin: 18px 0;
+}
+
+.plan-details div {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+.plan-details span {
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.plan-details strong {
+  color: #334155;
+  font-size: 12px;
+}
+
+.plan-card button {
+  width: 100%;
+  border: none;
+  background: #16a34a;
+  color: white;
+  padding: 13px;
+  border-radius: 9px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.plan-card button:hover {
+  background: #15803d;
+}
+
+.selected-workout {
+  max-width: 900px;
+  margin: 45px auto 0;
+}
+
+.workout-box {
+  position: relative;
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  border: none;
+  background: #f1f5f9;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.large-icon {
+  font-size: 50px;
+  margin-bottom: 12px;
+}
+
+.workout-box h2 {
+  color: #0f172a;
+  font-size: 30px;
+  margin: 8px 0;
+}
+
+.workout-box > p {
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.workout-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 25px 0;
+}
+
+.workout-info div {
+  text-align: center;
+}
+
+.workout-info span {
+  display: block;
+  color: #94a3b8;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.workout-info strong {
+  color: #334155;
+}
+
+.workout-box h3 {
+  color: #0f172a;
+  margin-bottom: 15px;
+}
+
+.exercise {
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+
+.exercise > span {
+  width: 35px;
+  height: 35px;
+  background: #dcfce7;
+  color: #15803d;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.exercise p {
+  flex: 1;
+  margin-left: 15px;
+  color: #334155;
+}
+
+.exercise > strong {
+  color: #22c55e;
+}
+
+.workout-tip {
+  max-width: 1200px;
+  margin: 35px auto 0;
+  padding: 30px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  background: linear-gradient(135deg, #0f172a, #172554);
+  color: white;
+}
+
+.tip-icon {
+  min-width: 65px;
+  height: 65px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.workout-tip h2 {
+  margin: 5px 0;
+}
+
+.workout-tip p {
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+@media (max-width: 1000px) {
+  .plans-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .plans-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workout-info {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}

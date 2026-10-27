@@ -1,1 +1,109 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fb;
+  color: #1e293b;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+.navbar {
+  min-height: 78px;
+  background: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 6%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+}
+
+.brand-icon {
+  width: 44px;
+  height: 44px;
+  background: #22c55e;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 23px;
+}
+
+.brand span {
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.navbar nav a {
+  color: #cbd5e1;
+  text-decoration: none;
+  padding: 10px 13px;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.25s;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+  color: white;
+  background: #22c55e;
+}
+
+main {
+  min-height: calc(100vh - 145px);
+}
+
+footer {
+  background: #0f172a;
+  color: #94a3b8;
+  text-align: center;
+  padding: 22px;
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .navbar nav {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
